@@ -14,7 +14,7 @@ import com.example.feignclient.HelloRemote;
 public class ConsumerController {
 
     @Autowired
-    HelloRemote HelloRemote;
+    HelloRemote helloRemote;
     
     @Value("${neo.hello}")
     private String hello;
@@ -22,8 +22,8 @@ public class ConsumerController {
 	
     @RequestMapping("/hello/{name}")
     public String index(@PathVariable("name") String name) {
-        //return HelloRemote.hello(name);
-    	return this.hello + "," + name;
+        return helloRemote.hello(name);
+    	//return this.hello + "," + name;
     }
 
 }
