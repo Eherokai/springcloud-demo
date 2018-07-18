@@ -1,0 +1,4 @@
+com\example\feignclient\HelloRemote.class
+com\example\controller\ConsumerController.class
+com\example\hystrix\HelloRemoteHystrix.class
+com\example\ConsumerApplication.class
