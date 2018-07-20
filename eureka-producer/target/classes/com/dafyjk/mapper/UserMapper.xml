@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dafyjk.mapper.UserMapper">
+  <resultMap id="BaseResultMap" type="com.dafyjk.mapper.User">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="username" jdbcType="VARCHAR" property="username" />
+    <result column="password" jdbcType="VARCHAR" property="password" />
+    <result column="name" jdbcType="VARCHAR" property="name" />
+    <result column="company_code" jdbcType="VARCHAR" property="companyCode" />
+    <result column="company_name" jdbcType="VARCHAR" property="companyName" />
+    <result column="department_code" jdbcType="VARCHAR" property="departmentCode" />
+    <result column="department_name" jdbcType="VARCHAR" property="departmentName" />
+    <result column="status" jdbcType="CHAR" property="status" />
+    <result column="creator" jdbcType="VARCHAR" property="creator" />
+    <result column="cdate" jdbcType="TIMESTAMP" property="cdate" />
+    <result column="editor" jdbcType="VARCHAR" property="editor" />
+    <result column="edate" jdbcType="TIMESTAMP" property="edate" />
+  </resultMap>
+
+  <sql id="Base_Column_List">
+    id, username, password, name, company_code, company_name, department_code, department_name, 
+    status, creator, cdate, editor, edate
+  </sql>
+  
+  
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from t_user
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  
+</mapper>

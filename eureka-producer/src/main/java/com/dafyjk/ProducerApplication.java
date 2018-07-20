@@ -1,4 +1,4 @@
-package com.example;
+package com.dafyjk;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,4 +11,4 @@ public class ProducerApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(ProducerApplication.class, args);
 	}
-}
+}	
