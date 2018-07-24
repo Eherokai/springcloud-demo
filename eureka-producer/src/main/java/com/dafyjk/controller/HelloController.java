@@ -1,5 +1,7 @@
 package com.dafyjk.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
@@ -16,6 +18,9 @@ import com.dafyjk.service.UserService;
 @RefreshScope
 public class HelloController {
 	
+	
+	private static Logger LOGGER = LoggerFactory.getLogger(HelloController.class);
+	
 	@Value("${neo.hello}")
     private String hello;
 	
@@ -26,6 +31,7 @@ public class HelloController {
     @RequestMapping("/hello")
     public String index(@RequestParam String name) {
         //return "hello "+name+"，this is first messge";
+    	LOGGER.info("my log!");
         return this.hello;
     }
     

@@ -11,7 +11,7 @@
 
     <appender name="FILE"
               class="ch.qos.logback.core.rolling.RollingFileAppender">
-        <file>logs/collection-web.log</file>
+        <file>logs/eureka.log</file>
         <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
             <FileNamePattern>logs/%d{yyyy-MM-dd}/collection-web.%d{yyyy-MM-dd}.log.%i.zip</FileNamePattern>
             <MaxHistory>30</MaxHistory>
